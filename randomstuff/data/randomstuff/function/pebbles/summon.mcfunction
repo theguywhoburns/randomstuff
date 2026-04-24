@@ -1,7 +1,6 @@
-# 1. The Body (Visual)
-summon item_display ~ ~ ~ {\
+$summon item_display ~ ~ ~ {\
     item: {id: "minecraft:stone", count: 1, components: {\
-        item_model: "randomstuff:flint_and_flint"\
+        item_model: "$(display_item_id)"\
     }},\
     transformation: {\
         scale: [0.5f, 0.5f, 0.5f],\
@@ -12,16 +11,14 @@ summon item_display ~ ~ ~ {\
     Tags: ["randomstuff", "pebble_display"]\
 }
 
-# 2. The Soul (Hitbox & Data)
-# Width/Height set to 0.3 so the hitbox matches the rock size!
-summon interaction ~ ~ ~ {\
+$summon interaction ~ ~ ~ {\
     width: 0.3f,\
     height: 0.2f,\
     response: 1b,\
     data: {\
         randomstuff: {\
-            id: "granite_pebble"\
+            id: "$(item_id)"\
         }\
     },\
-    Tags: ["randomstuff", "pebble"]\
+    Tags: ["randomstuff", "pebble", "$(item_id)"]\
 }
