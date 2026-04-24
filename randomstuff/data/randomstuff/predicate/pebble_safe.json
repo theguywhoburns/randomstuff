@@ -1,0 +1,15 @@
+{
+  "condition": "minecraft:location_check",
+  "predicate": {
+    "block": {
+      "blocks": [
+        "minecraft:stone",
+        "minecraft:cobblestone",
+        "minecraft:deepslate",
+        "minecraft:tuff",
+        "minecraft:blackstone",
+        "minecraft:end_stone"
+      ]
+    }
+  }
+}

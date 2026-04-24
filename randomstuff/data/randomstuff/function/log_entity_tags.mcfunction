@@ -1,0 +1,1 @@
+execute if score $Global Debug matches 1 as @s run tellraw @a {"nbt":"Tags", "entity":"@s"}
