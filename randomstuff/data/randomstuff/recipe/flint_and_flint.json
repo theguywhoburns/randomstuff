@@ -1,0 +1,20 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        "minecraft:flint",
+        "minecraft:flint"
+    ],
+    "result": {
+        "id": "flint_and_steel",
+        "components": {
+            "custom_data": {
+                "randomstuff": 1
+            },
+            "item_name": {
+                "translate": "randomstuff.item.flint_and_flint"
+            },
+            "max_damage": 12,
+            "item_model": "randomstuff:flint_and_flint"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "type": "campfire_cooking",
+    "ingredient": [
+        "bamboo_block",
+        "stripped_bamboo_block"
+    ],
+    "result": "charcoal"
+}

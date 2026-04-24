@@ -1,0 +1,20 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+        "entity_type": "interaction",
+        "tags": {
+            "any_of": [
+                "pebble"
+            ]
+        },
+        "custom_data": {
+            "randomstuff": {
+                "id": "granite_pebble"
+            }
+        },
+        "nbt": {
+            "attack": {}
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "key": {
+        "l": "#minecraft:soul_fire_base_blocks",
+        "f": "minecraft:hay_block",
+        "s": "minecraft:stick"
+    },
+    "pattern": [
+        " s ",
+        "sfs",
+        "lll"
+    ],
+    "result": {
+        "id": "minecraft:soul_campfire",
+        "components": {
+            "block_state": {
+                "lit": "false"
+            }
+        }
+    }
+}
