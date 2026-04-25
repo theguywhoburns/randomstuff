@@ -1,0 +1,2 @@
+execute as @e[type=minecraft:marker,tag=grid_cursor] run function randomstuff:knapping/grid/loop_summon
+execute as @e[type=minecraft:marker,tag=grid_cursor,limit=1] run schedule function randomstuff:knapping/grid/loop_wrapper 1t replace

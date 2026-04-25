@@ -2,40 +2,40 @@
 
 ## Overview
 
-Custom items are defined in a registry. Items have an id, a vanilla item_id for rendering/interaction, and a display_id for UI. Knapping and other systems reference items by their custom id.
+Custom items are defined in a registry. Items have an id, a custom_id for storage keys, a vanilla item_id for rendering/interaction, and components with fields. Items are given via summoned item entities (not /give command) due to a fundamental limitation.
 
 ## Item Registry
 
-**Storage path:** `randomstuff:items.<id>`
+**Storage path:** `randomstuff:items.<custom_id>`
 
 ```json
 {
-  "granite_rock": {
-    "item_id": "granite",
-    "display_id": "randomstuff:granite_rock"
-  },
-  "raw_flint": {
-    "item_id": "flint",
-    "display_id": "randomstuff:raw_flint"
-  },
-  "raw_clay": {
-    "item_id": "clay_ball",
-    "display_id": "randomstuff:raw_clay"
+  "flint_and_flint": {
+    "id": "minecraft:flint_and_steel",
+    "components": {
+      "custom_data": {...},
+      "item_name": {...},
+      "max_damage": 12,
+      "item_model": "randomstuff:flint_and_flint"
+    },
+    "fields": [{"field":"custom_data"},{"field":"item_name"},{"field":"max_damage"},{"field":"item_model"}]
   }
 }
 ```
-
-- `id` - custom identifier used for all lookups
-- `item_id` - vanilla Minecraft item ID (what the player actually holds)
-- `display_id` - custom item ID for rendering/UI (can equal id)
 
 ## Item Definition
 
 ```json
 {
-  "id": "granite_rock",
-  "item_id": "granite",
-  "display_id": "randomstuff:granite_rock"
+  "id": "minecraft:flint_and_steel",
+  "custom_id": "flint_and_flint",
+  "components": {
+    "custom_data": {...},
+    "item_name": {...},
+    "max_damage": 12,
+    "item_model": "..."
+  },
+  "fields": [{"field":"custom_data"},...]
 }
 ```
 
@@ -44,35 +44,56 @@ Custom items are defined in a registry. Items have an id, a vanilla item_id for 
 **Register function:** `items/register.mcfunction`
 
 ```mcfunction
-# Register granite_rock
 function randomstuff:items/register {
-  "id": "granite_rock",
-  "item_id": "granite",
-  "display_id": "randomstuff:granite_rock"
-}
-
-# Register raw_flint
-function randomstuff:items/register {
-  "id": "raw_flint",
-  "item_id": "flint",
-  "display_id": "randomstuff:raw_flint"
+    "id":"minecraft:flint_and_steel",
+    "custom_id":"flint_and_flint",
+    "components":{
+        "custom_data":{...},
+        "item_name":{...},
+        "max_damage":12,
+        "item_model":"randomstuff:flint_and_flint"
+    },
+    "fields": [{"field":"custom_data"},{"field":"item_name"},{"field":"max_damage"},{"field":"item_model"}]
 }
 ```
 
-**How register works:**
-1. Takes id, item_id, display_id from input
-2. Stores in `randomstuff:items.<id>` with those fields
+## /give Command Limitation (UNFIXABLE HACK)
+
+**Problem:** Using `/give @s id[components]` with macro unwrapping produces invalid syntax.
+
+When `$(components)` expands, it includes quoted field names from JSON:
+```
+give @s minecraft:flint_and_steel["custom_data"={...},"item_name"={...}]
+```
+
+But `/give` requires unquoted field names:
+```
+give @s minecraft:flint_and_steel[custom_data={...},item_name={...}]
+```
+
+**Solution:** Items are given via `summon item` instead:
+```mcfunction
+summon minecraft:item ~ ~ ~ {Item:{id:"$(id)",count:1b,components:$(components)}}
+```
+
+This works because item entity JSON naturally accepts quoted keys.
+
+This is a fundamental limitation with no fix - the `/give` command's NBT syntax and macro JSON unwrapping are incompatible.
 
 ## Runtime Item Instance
 
 When player holds an item:
 ```json
 {
-  "id": "minecraft:granite",
+  "id": "minecraft:flint_and_steel",
   "components": {
     "custom_data": {
-      "id": "granite_rock"
-    }
+      "randomstuff": 1,
+      "id": "flint_and_flint"
+    },
+    "item_name": {...},
+    "max_damage": 12,
+    "item_model": "randomstuff:flint_and_flint"
   }
 }
 ```
@@ -86,11 +107,6 @@ Tags are stored as scoreboard objectives:
 - `randomstuff:tags.knappable_clay` - clay items that can be knapped
 - `randomstuff:tags.<material>` - individual material flags
 
-**Tag definition format (scoreboard):**
-```
-scoreboard players set <item_id> randomstuff:tags.knappable_rocks 1
-```
-
 **Checking tags:**
 - Does item have score in `tags.knappable_rocks`? → it's knappable
 - Get item's `custom_data.id` → use as material key for recipes
@@ -100,19 +116,25 @@ scoreboard players set <item_id> randomstuff:tags.knappable_rocks 1
 ```
 data/randomstuff/
   storage/
-    items/                    # item registry
-    tags                      # tag scoreboards
+    items/                    # item registry (key = custom_id)
+    registries/               # registry iteration tracking
+    tmp/                      # temporary storage for operations
   function/
     items/
       register.mcfunction     # registration function
-      lookup.mcfunction       # given id, returns item data
-      get_from_hand.mcfunction # get item data from player hand
+      get.mcfunction          # get item from registry by custom_id
+      actual_get.mcfunction   # performs the item give via summon
+      register_test.mcfunction # test item registration
+      reset_registry.mcfunction # clears all registered items
+      reset_loop.mcfunction   # recursive reset implementation
     load.mcfunction           # calls register for all items
 ```
 
 ## Notes
 
 - Items and knapping are separate systems
-- Item registry provides item_id → vanilla mapping
+- Item registry provides id → vanilla mapping via custom_id key
+- `/give` cannot be used for fully dynamic items due to macro unwrapping quoting issue
+- Summon item entity is the workaround for giving custom items
 - Tags determine what an item CAN do (knappable, pourable, etc.)
 - Recipes reference items by their custom id

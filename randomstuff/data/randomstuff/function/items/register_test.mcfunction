@@ -1,4 +1,4 @@
-function randomstuff:items/register {\
+function randomstuff:items/register_item {\
     "id":"minecraft:flint_and_steel",\
     "custom_id":"flint_and_flint",\
     "components":{\

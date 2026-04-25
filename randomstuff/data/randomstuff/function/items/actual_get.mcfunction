@@ -6,6 +6,6 @@ $tellraw @s [\
     {"text":"randomstuff:items/get", "color": "yellow"},\
     {"text":"]: ", "color": "gray"},\
     {"translate": "randomstuff.cmd.give.success",\
-        "with": ["$(id)"],"color": "red"\
+        "with": ["$(custom_id)"],"color": "red"\
     }\
 ]

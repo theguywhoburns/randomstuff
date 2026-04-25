@@ -1,1 +1,1 @@
-execute as @e[type=minecraft:interaction, tag=pebble] if predicate randomstuff:is_pebble_punched run function randomstuff:pebbles/break
+execute as @e[type=minecraft:interaction, tag=laying_item, nbt={attack:{}}] run function randomstuff:laying_item/break
