@@ -1,1 +1,0 @@
-execute if score $Global rs.util.debug matches 1 as @s run tellraw @a {"nbt":"Tags", "entity":"@s"}
