@@ -1,7 +1,8 @@
 # Custom item summon - uses registry context (id, components)
 # Entry point: function randomstuff:laying_item/summon { "item_id": "flint_and_flint" }
 # Registry lookup happens via with storage randomstuff:items.<item_id>
-say AYO
+# the comment was vibecoded cuz i was too lazy to split the functions, needs rewriting later for better reusability
+
 $summon item_display ~ ~ ~ {\
     item: {\
         id: "$(id)",\

@@ -1,0 +1,1 @@
+$kill @e[tag=knapping, scores={rs.knapping.grid.g_id=$(g_id)}]
