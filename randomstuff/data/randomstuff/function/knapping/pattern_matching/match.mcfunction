@@ -29,4 +29,4 @@ execute store result storage randomstuff:knapping.grid.match v42 int 1 run data 
 execute store result storage randomstuff:knapping.grid.match v43 int 1 run data get entity @s data.grid[4][3]
 execute store result storage randomstuff:knapping.grid.match v44 int 1 run data get entity @s data.grid[4][4]
 
-function randomstuff:pattern_matching/match_if with storage randomstuff:knapping.grid.match
+function randomstuff:knapping/pattern_matching/match_if with storage randomstuff:knapping.grid.match
