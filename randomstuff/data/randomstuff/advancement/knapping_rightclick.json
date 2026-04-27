@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "using_item": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "items": "#randomstuff:knappable",
+                    "components": {
+                        "custom_data": {
+                            "knappable": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "randomstuff:knapping/interaction/on_rightclick"
+    }
+}

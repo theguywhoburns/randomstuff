@@ -11,9 +11,11 @@ execute if score @s rs.knapping.grid.row matches 5.. run return run kill
 scoreboard players operation #knapping rs.knapping.grid.temp.g_id = @s rs.knapping.grid.g_id
 scoreboard players operation #knapping rs.knapping.grid.temp.row = @s rs.knapping.grid.row
 scoreboard players operation #knapping rs.knapping.grid.temp.col = @s rs.knapping.grid.col
+# Global temporary state for the block display to get the display resource id from
+data modify storage randomstuff:knapping.grid state.resource set from entity @s data
 
 # spawn display and interaction of said display
-execute at @s positioned ~0.0625 ~ ~0.0625 summon minecraft:block_display run function randomstuff:knapping/grid/init_cell_display
+execute at @s positioned ~0.0625 ~ ~0.0625 summon minecraft:block_display run function randomstuff:knapping/grid/init_cell_display with storage randomstuff:knapping.grid state.resource
 
 execute at @s positioned ~0.15 ~ ~0.15 summon minecraft:interaction run function randomstuff:knapping/grid/init_cell
 
@@ -21,3 +23,6 @@ execute at @s positioned ~0.15 ~ ~0.15 summon minecraft:interaction run function
 execute at @s run tp @s ~0.175 ~ ~
 
 scoreboard players add @s rs.knapping.grid.col 1
+
+# free temp state just in case
+data remove storage randomstuff:knapping.grid state.resource

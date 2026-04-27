@@ -5,6 +5,8 @@ data modify entity @s Invulnerable set value 1b
 
 # storage to check if we destroyed all the grid cells
 # if reached 25, we destroy the storage
+$data modify entity @s data.resource set value $(id)
+$data modify entity @s data.display_resource set value $(disp_id)
 data modify entity @s data.flips set value 0
 
 tag @s add randomstuff

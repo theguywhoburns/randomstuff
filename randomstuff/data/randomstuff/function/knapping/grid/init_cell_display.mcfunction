@@ -1,5 +1,8 @@
 # NOTE: assumes the execution is done as the display entity
-data modify entity @s block_state set value {Name:"minecraft:mossy_stone_bricks"}
+
+# safery display set in case the macro one fails
+data modify entity @s block_state set value {Name:"minecraft:barrier"}
+
 data modify entity @s transformation set value {\
     translation:[0.0f,0.0f,0.0f],\
     scale:[0.175f,0.175f,0.175f],\
@@ -17,3 +20,5 @@ scoreboard players operation @s rs.knapping.grid.row = \
     #knapping rs.knapping.grid.temp.row
 scoreboard players operation @s rs.knapping.grid.col = \
     #knapping rs.knapping.grid.temp.col
+
+$data modify entity @s block_state set value {Name:$(display_resource)}
