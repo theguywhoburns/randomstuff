@@ -9,5 +9,3 @@ $tellraw @s [\
         "with": ["$(entry)"], "color": "red"\
     }\
 ]
-
-function randomstuff:items/reset_loop with storage randomstuff:registries.items array[-1]
