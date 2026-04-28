@@ -1,6 +1,6 @@
 # NOTE: assumes the execution is done as the display entity
 
-# safery display set in case the macro one fails
+# safety display set in case the macro one fails
 data modify entity @s block_state set value {Name:"minecraft:barrier"}
 
 data modify entity @s transformation set value {\
