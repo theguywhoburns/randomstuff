@@ -15,9 +15,11 @@ scoreboard players operation #knapping rs.knapping.grid.temp.col = @s rs.knappin
 data modify storage randomstuff:knapping.grid state.resource set from entity @s data
 
 # spawn display and interaction of said display
-execute at @s positioned ~0.0625 ~ ~0.0625 summon minecraft:block_display run function randomstuff:knapping/grid/init_cell_display with storage randomstuff:knapping.grid state.resource
+execute at @s positioned ~0.0625 ~ ~0.0625 summon minecraft:block_display run \
+    function randomstuff:knapping/grid/grid_cell/init_cell_display with storage randomstuff:knapping.grid state.resource
 
-execute at @s positioned ~0.15 ~ ~0.15 summon minecraft:interaction run function randomstuff:knapping/grid/init_cell
+execute at @s positioned ~0.15 ~ ~0.15 summon minecraft:interaction run \
+    function randomstuff:knapping/grid/grid_cell/init_cell
 
 # move to the next cell
 execute at @s run tp @s ~0.175 ~ ~
