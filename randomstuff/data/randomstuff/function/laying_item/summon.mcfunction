@@ -1,5 +1,5 @@
 # $id = item id
-# Checks if custom item, branches accordingly
+# checks if custom item, branches accordingly
 
 $execute if data storage randomstuff:items $(id) run \
     return run function randomstuff:laying_item/summon_custom with storage randomstuff:items $(id)

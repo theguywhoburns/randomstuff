@@ -1,4 +1,4 @@
-# Gives item from context (id and components available)
+# gives item from context (id and components available)
 $execute at @s run summon minecraft:item ~ ~ ~ {Item:{id:"$(id)",count:1b, components:$(components)}}
 $tellraw @s [\
     {"text":"[", "color": "gray"},\

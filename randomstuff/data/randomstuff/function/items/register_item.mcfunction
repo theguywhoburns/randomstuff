@@ -1,6 +1,6 @@
 # $id = item id
 # $components = item components json
-# Stores item data and adds id to registry
+# stores item data and adds id to registry
 
 $execute if data storage randomstuff:items $(id) run tellraw @a [\
   {"text":"[", "color": "gray"},\
