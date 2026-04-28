@@ -2,3 +2,8 @@
 *.log
 
 .DS_Store
+
+
+# required for raycasting, but is a runtime dep so not needed in the repo
+# https://github.com/mcbookshelf/bookshelf
+bookshelf/
