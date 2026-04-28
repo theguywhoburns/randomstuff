@@ -12,7 +12,7 @@ scoreboard objectives add rs.knapping.grid.temp.col dummy
 
 # todo, add a check for that
 scoreboard players set #knapping rs.knapping.grid.g_id 1
+function randomstuff:items/register_test
 
+schedule function randomstuff:tick 1t replace
 schedule function randomstuff:tick5 5t replace
-
-function randomstuff:items/register_test.mcfunction
