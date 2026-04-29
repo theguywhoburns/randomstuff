@@ -1,3 +1,7 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 # NOTE: assumes the execution is done as the interaction entity in the grid
 execute store result storage randomstuff:knapping.grid.temp.idx g_id int 1 run scoreboard players get @s rs.knapping.grid.g_id
 execute store result storage randomstuff:knapping.grid.temp.idx row int 1 run scoreboard players get @s rs.knapping.grid.row

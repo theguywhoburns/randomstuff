@@ -1,3 +1,7 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 # @s = storage entity
 execute store result storage randomstuff:knapping.grid state.match.v00 int 1 run data get entity @s data.grid[0][0]
 execute store result storage randomstuff:knapping.grid state.match.v01 int 1 run data get entity @s data.grid[0][1]

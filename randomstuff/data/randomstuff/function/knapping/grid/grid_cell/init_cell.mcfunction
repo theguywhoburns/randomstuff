@@ -1,3 +1,7 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 # NOTE: assumes the execution is done as the interaction entity
 data modify entity @s width set value 0.175f
 data modify entity @s height set value 0.175f
