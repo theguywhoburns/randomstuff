@@ -5,7 +5,7 @@ execute if score @s rs.knapping.grid.col matches 5.. run execute as @s at @s run
 execute if score @s rs.knapping.grid.col matches 5.. run scoreboard players set @s rs.knapping.grid.col 0
 
 # row >= 5? exit
-execute if score @s rs.knapping.grid.row matches 5.. run return run kill
+execute if score @s rs.knapping.grid.row matches 5.. run return run function randomstuff:knapping/grid/loop_fini
 
 # prepare temp values
 scoreboard players operation #knapping rs.knapping.grid.temp.g_id = @s rs.knapping.grid.g_id

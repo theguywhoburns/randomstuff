@@ -12,6 +12,7 @@ data modify entity @s transformation set value {\
 
 tag @s add randomstuff
 tag @s add knapping
+tag @s add grid
 tag @s add grid_disp
 
 scoreboard players operation @s rs.knapping.grid.g_id = \

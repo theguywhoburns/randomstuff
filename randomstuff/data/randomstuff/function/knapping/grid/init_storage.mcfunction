@@ -7,22 +7,21 @@ data modify entity @s Invulnerable set value 1b
 # if reached 25, we destroy the storage
 $data modify entity @s data.resource set value $(id)
 $data modify entity @s data.display_resource set value $(disp_id)
+# there's also data.matched_recipe but such is updated with on_interact
 data modify entity @s data.flips set value 0
 
 tag @s add randomstuff
 tag @s add knapping
-# TODO: Swap for a proper tag lol
-tag @s add grid_bee
+tag @s add grid
+tag @s add grid_storage
 
-data modify entity @s data set value {\
-    grid:[\
+data modify entity @s data.grid set value [\
         [1b,1b,1b,1b,1b],\
         [1b,1b,1b,1b,1b],\
         [1b,1b,1b,1b,1b],\
         [1b,1b,1b,1b,1b],\
         [1b,1b,1b,1b,1b],\
-    ],\
-}
+    ]
 scoreboard players operation @s rs.knapping.grid.g_id = \
     #knapping rs.knapping.grid.temp.g_id
 scoreboard players set @s rs.knapping.grid.flips 0

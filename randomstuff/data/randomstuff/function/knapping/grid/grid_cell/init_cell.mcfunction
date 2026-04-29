@@ -4,6 +4,7 @@ data modify entity @s height set value 0.175f
 
 tag @s add randomstuff
 tag @s add knapping
+tag @s add grid
 tag @s add grid_cell
 
 scoreboard players operation @s rs.knapping.grid.g_id = \

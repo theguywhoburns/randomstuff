@@ -1,5 +1,6 @@
 tag @s add randomstuff
 tag @s add knapping
+tag @s add grid
 tag @s add grid_cursor
 
 $data modify entity @s data.resource set value $(id)
