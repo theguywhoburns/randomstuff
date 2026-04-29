@@ -2,18 +2,41 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-# TODO: Generate these, not hardcode
+# recipes defined as 2D grids, extracted to flat keys at load time
+# match_if.mcfunction looks up flat keys (v00.v01.v02...) in patterns.tree
 
-# 1 1 1 1 1
-# 1 1 1 1 1
-# 1 1 1 1 1
-# 1 1 1 1 1
-# 1 1 1 1 1
-data modify storage randomstuff:knapping.patterns.tree 1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1 set value {recipe:"flint", result:{id:"minecraft:flint", count:1b}}
+# flint - full 5x5
+data modify storage randomstuff:knapping.patterns raw.flint set value {\
+    grid: [\
+        [1b,1b,1b,1b,1b],\
+        [1b,1b,1b,1b,1b],\
+        [1b,1b,1b,1b,1b],\
+        [1b,1b,1b,1b,1b],\
+        [1b,1b,1b,1b,1b]\
+    ],\
+    result: {\
+        item: {\
+            id:"minecraft:flint",count:1b\
+        }\
+    }\
+}
+function randomstuff:knapping/grid/extract_grid {target:"randomstuff:knapping.patterns raw.flint.result",src:"storage randomstuff:knapping.patterns raw.flint.grid"}
+function randomstuff:knapping/pattern_matching/register_recipe with storage randomstuff:knapping.patterns raw.flint.result
 
-# 1 0 0 0 0
-# 0 0 0 0 0
-# 0 0 0 0 0
-# 0 0 0 0 0
-# 0 0 0 0 0
-data modify storage randomstuff:knapping.patterns.tree 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 set value {recipe:"iron_ingot", result:{id:"minecraft:iron_ingot", count:1b}}
+# iron_ingot - single corner
+data modify storage randomstuff:knapping.patterns raw.iron_ingot set value {\
+    grid: [\
+        [1b,0b,0b,0b,0b],\
+        [0b,0b,0b,0b,0b],\
+        [0b,0b,0b,0b,0b],\
+        [0b,0b,0b,0b,0b],\
+        [0b,0b,0b,0b,0b]\
+    ],\
+    result: {\
+        item: {\
+            id:"minecraft:iron_ingot",count:1b\
+        }\
+    }\
+}
+function randomstuff:knapping/grid/extract_grid {target:"randomstuff:knapping.patterns raw.iron_ingot.result",src:"storage randomstuff:knapping.patterns raw.iron_ingot.grid"}
+function randomstuff:knapping/pattern_matching/register_recipe with storage randomstuff:knapping.patterns raw.iron_ingot.result
