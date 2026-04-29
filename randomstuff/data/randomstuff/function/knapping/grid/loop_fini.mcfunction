@@ -7,7 +7,7 @@ data modify storage randomstuff:knapping.grid state.resource set from entity @s 
 # ran once on finished init
 execute as @e[type=minecraft:interaction,tag=grid_storage,sort=nearest] \
     if score @s rs.knapping.grid.g_id = #knapping rs.knapping.grid.temp.g_id run \
-    function randomstuff:knapping/grid/update_storage
+    function randomstuff:knapping/grid/storage/update
 
 data remove storage randomstuff:knapping.grid state.resource
 return run kill @s

@@ -5,7 +5,7 @@
 scoreboard players operation #knapping rs.knapping.grid.temp.g_id = @s rs.knapping.grid.g_id
 
 execute as @s at @s if data entity @s data.result run \
-    function randomstuff:knapping/grid/grid_storage_fini with entity @s data
+    function randomstuff:knapping/grid/storage/finish with entity @s data
 # TODO: Horrendous selector, fix with a ranged one later
 execute as @e[tag=grid] \
     if score @s rs.knapping.grid.g_id = #knapping rs.knapping.grid.temp.g_id \

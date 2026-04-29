@@ -3,7 +3,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 # @s = storage entity
-function randomstuff:knapping/grid/extract_grid {target:"randomstuff:knapping.grid state.match",src:"entity @s data.grid"}
+function randomstuff:knapping/grid/storage/extract {target:"randomstuff:knapping.grid state.match",src:"entity @s data.grid"}
 function randomstuff:knapping/pattern_matching/match_if with storage randomstuff:knapping.grid state.match
 
 data remove storage randomstuff:knapping.grid state.match
