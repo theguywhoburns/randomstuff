@@ -27,5 +27,5 @@ data modify entity @s data.grid set value [\
         [1b,1b,1b,1b,1b],\
     ]
 scoreboard players operation @s rs.knapping.grid.g_id = \
-    #knapping rs.knapping.grid.temp.g_id
+    #knapping.temp rs.knapping.grid.g_id
 scoreboard players set @s rs.knapping.grid.flips 0

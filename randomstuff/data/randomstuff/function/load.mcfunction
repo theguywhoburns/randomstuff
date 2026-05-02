@@ -8,10 +8,6 @@ scoreboard objectives add rs.knapping.grid.row dummy
 scoreboard objectives add rs.knapping.grid.col dummy
 scoreboard objectives add rs.knapping.grid.flips dummy
 
-scoreboard objectives add rs.knapping.grid.temp.g_id dummy
-scoreboard objectives add rs.knapping.grid.temp.row dummy
-scoreboard objectives add rs.knapping.grid.temp.col dummy
-
 # TODO: This is a temorary solution for carrying hardcoded item id's for the raycast
 scoreboard objectives add rs.knapping.item.id dummy
 scoreboard players set #knapping rs.knapping.grid.g_id 1

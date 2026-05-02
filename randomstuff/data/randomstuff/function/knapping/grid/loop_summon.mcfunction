@@ -12,9 +12,9 @@ execute if score @s rs.knapping.grid.col matches 5.. run scoreboard players set 
 execute if score @s rs.knapping.grid.row matches 5.. run return run function randomstuff:knapping/grid/loop_fini
 
 # prepare temp values
-scoreboard players operation #knapping rs.knapping.grid.temp.g_id = @s rs.knapping.grid.g_id
-scoreboard players operation #knapping rs.knapping.grid.temp.row = @s rs.knapping.grid.row
-scoreboard players operation #knapping rs.knapping.grid.temp.col = @s rs.knapping.grid.col
+scoreboard players operation #knapping.temp rs.knapping.grid.g_id = @s rs.knapping.grid.g_id
+scoreboard players operation #knapping.temp rs.knapping.grid.row = @s rs.knapping.grid.row
+scoreboard players operation #knapping.temp rs.knapping.grid.col = @s rs.knapping.grid.col
 # Global temporary state for the block display to get the display resource id from
 data modify storage randomstuff:knapping.grid state.resource set from entity @s data
 

@@ -20,10 +20,10 @@ tag @s add grid
 tag @s add grid_disp
 
 scoreboard players operation @s rs.knapping.grid.g_id = \
-    #knapping rs.knapping.grid.temp.g_id
+    #knapping.temp rs.knapping.grid.g_id
 scoreboard players operation @s rs.knapping.grid.row = \
-    #knapping rs.knapping.grid.temp.row
+    #knapping.temp rs.knapping.grid.row
 scoreboard players operation @s rs.knapping.grid.col = \
-    #knapping rs.knapping.grid.temp.col
+    #knapping.temp rs.knapping.grid.col
 
 $data modify entity @s block_state set value {Name:$(display_resource)}
