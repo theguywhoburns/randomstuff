@@ -1,4 +1,8 @@
 {
     "randomstuff.cmd.give.success": "Выдан предмет: %s",
-    "randomstuff.error.item.not_in_registry": "Предмета с id '%s' нету в базе данных!"
+    "randomstuff.error.item.not_in_registry": "Предмета с id '%s' нету в базе данных!",
+    "randomstuff.item.stone_axe_head": "Каменный наконечник топора",
+    "randomstuff.item.stone_knife_head": "Каменный наконечник ножа",
+    "randomstuff.item.stone_shovel_head": "Каменный наконечник лопаты",
+    "randomstuff.item.flint_and_flint": "Кремень и кремень"
 }
