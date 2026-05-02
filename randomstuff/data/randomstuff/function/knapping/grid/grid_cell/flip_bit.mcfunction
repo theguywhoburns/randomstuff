@@ -8,3 +8,7 @@ execute if score @s rs.knapping.grid.flips matches 25.. run \
     function randomstuff:knapping/grid/cleanup with storage randomstuff:knapping.grid.temp.idx
 execute unless score @s rs.knapping.grid.flips matches 25.. run \
     function randomstuff:knapping/grid/storage/update
+execute as @s[nbt={data:{resource:"clay"}}] at @s run \
+    playsound block.gravel.break block @a
+execute as @s[nbt={data:{resource:"rocks"}}] at @s run \
+    playsound block.stone.break block @a

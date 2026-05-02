@@ -21,6 +21,5 @@ execute as @e[type=minecraft:block_display,tag=grid_disp] \
     if score @s rs.knapping.grid.col = #knapping.temp rs.knapping.grid.col \
     run kill @s
 
-execute as @s at @s run playsound block.stone.break block @a
 execute as @s at @s run particle dust{color:[0.2f,0.2f,0.2f],scale:1} ~ ~0.5 ~
 execute as @s run kill

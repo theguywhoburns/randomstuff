@@ -3,8 +3,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 # extracts 5x5 grid to storage as v00-v44 keys
-# $(target) = base storage path e.g. "randomstuff:knapping.grid state.match"
-# $(src) = source: "entity @s" or "storage namespace:path"
+# look at function/knapping/pattern_matching/load_recipe for usage
 
 $execute store result storage $(target).v00 int 1 run data get $(src)[0][0]
 $execute store result storage $(target).v01 int 1 run data get $(src)[0][1]
