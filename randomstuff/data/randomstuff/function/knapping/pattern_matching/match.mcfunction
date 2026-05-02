@@ -4,6 +4,7 @@
 
 # @s = storage entity
 function randomstuff:knapping/grid/storage/extract {target:"randomstuff:knapping.grid state.match",src:"entity @s data.grid"}
+data modify storage randomstuff:knapping.grid state.match.input set from entity @s data.resource
 function randomstuff:knapping/pattern_matching/match_if with storage randomstuff:knapping.grid state.match
 
 data remove storage randomstuff:knapping.grid state.match

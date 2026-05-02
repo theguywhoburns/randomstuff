@@ -15,12 +15,13 @@ data modify storage randomstuff:knapping.patterns raw.flint set value {\
         [1b,1b,1b,1b,1b]\
     ],\
     result: {\
+        input: "clay", \
         item: {\
             id:"minecraft:flint",count:1b\
-        }\
+        }\  
     }\
 }
-function randomstuff:knapping/grid/extract_grid {target:"randomstuff:knapping.patterns raw.flint.result",src:"storage randomstuff:knapping.patterns raw.flint.grid"}
+function randomstuff:knapping/grid/storage/extract {target:"randomstuff:knapping.patterns raw.flint.result",src:"storage randomstuff:knapping.patterns raw.flint.grid"}
 function randomstuff:knapping/pattern_matching/register_recipe with storage randomstuff:knapping.patterns raw.flint.result
 
 # iron_ingot - single corner
@@ -33,10 +34,11 @@ data modify storage randomstuff:knapping.patterns raw.iron_ingot set value {\
         [0b,0b,0b,0b,0b]\
     ],\
     result: {\
+        input: "rocks", \
         item: {\
             id:"minecraft:iron_ingot",count:1b\
         }\
     }\
 }
-function randomstuff:knapping/grid/extract_grid {target:"randomstuff:knapping.patterns raw.iron_ingot.result",src:"storage randomstuff:knapping.patterns raw.iron_ingot.grid"}
+function randomstuff:knapping/grid/storage/extract {target:"randomstuff:knapping.patterns raw.iron_ingot.result",src:"storage randomstuff:knapping.patterns raw.iron_ingot.grid"}
 function randomstuff:knapping/pattern_matching/register_recipe with storage randomstuff:knapping.patterns raw.iron_ingot.result

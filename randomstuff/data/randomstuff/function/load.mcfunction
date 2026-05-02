@@ -14,7 +14,13 @@ scoreboard objectives add rs.knapping.grid.temp.g_id dummy
 scoreboard objectives add rs.knapping.grid.temp.row dummy
 scoreboard objectives add rs.knapping.grid.temp.col dummy
 
-# todo, add a check for that
+# TODO: This is a temorary solution for carrying hardcoded item id's for the raycast
+scoreboard objectives add rs.knapping.item.id dummy
+
+# TODO: remove this shit and find a proper alternative
+scoreboard objectives add holding_clay dummy
+
+# TODO: add a check for that
 scoreboard players set #knapping rs.knapping.grid.g_id 1
 
 function randomstuff:items/register_test
