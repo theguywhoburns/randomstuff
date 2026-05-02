@@ -1,0 +1,4 @@
+{
+    "randomstuff.cmd.give.success": "Got item: %s",
+    "randomstuff.error.item.not_in_registry": "Item id '%s' is not in the registry!"
+}

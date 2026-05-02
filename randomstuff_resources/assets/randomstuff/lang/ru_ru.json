@@ -1,0 +1,4 @@
+{
+    "randomstuff.cmd.give.success": "Выдан предмет: %s",
+    "randomstuff.error.item.not_in_registry": "Предмета с id '%s' нету в базе данных!"
+}
