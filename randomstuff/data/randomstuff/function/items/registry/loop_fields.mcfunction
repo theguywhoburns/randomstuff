@@ -5,5 +5,5 @@
 $data modify storage randomstuff:registries items.$(id).components merge from storage \
     randomstuff:registries temp.item_fields[-1].field
 data remove storage randomstuff:registries temp.item_fields[-1]
-execute if data storage randomstuff:registries temp.item_fields[-1] run \
+$execute if data storage randomstuff:registries temp.item_fields[-1] run \
     function randomstuff:items/registry/loop_fields {id: "$(id)"}
