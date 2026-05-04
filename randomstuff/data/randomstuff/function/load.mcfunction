@@ -12,7 +12,7 @@ scoreboard objectives add rs.knapping.grid.flips dummy
 scoreboard objectives add rs.knapping.item.id dummy
 scoreboard players set #knapping rs.knapping.grid.g_id 1
 
-function randomstuff:items/register_test
+function randomstuff:items/load_items
 
 schedule function randomstuff:tick 1t replace
 schedule function randomstuff:tick5 5t replace

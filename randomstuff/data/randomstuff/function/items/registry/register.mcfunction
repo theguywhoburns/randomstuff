@@ -32,7 +32,8 @@
 $execute if data storage randomstuff:registries items.$(id) run return fail
 
 $data modify storage randomstuff:registries items.$(id) set value {\
-    id:"$(raw)",\
+    id:"$(id)",\
+    raw:"$(raw)",\
     components: {\
         custom_data: {\
             id:$(id),\
