@@ -3,9 +3,9 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 # NOTE: assumes the execution is done as the interaction entity in the grid
-execute store result storage randomstuff:knapping.grid.temp.idx g_id int 1 run scoreboard players get @s rs.knapping.grid.g_id
-execute store result storage randomstuff:knapping.grid.temp.idx row int 1 run scoreboard players get @s rs.knapping.grid.row
-execute store result storage randomstuff:knapping.grid.temp.idx col int 1 run scoreboard players get @s rs.knapping.grid.col
+execute store result storage randomstuff:knapping.grid temp.idx.g_id int 1 run scoreboard players get @s rs.knapping.grid.g_id
+execute store result storage randomstuff:knapping.grid temp.idx.row int 1 run scoreboard players get @s rs.knapping.grid.row
+execute store result storage randomstuff:knapping.grid temp.idx.col int 1 run scoreboard players get @s rs.knapping.grid.col
 
 scoreboard players operation #knapping.temp rs.knapping.grid.g_id = @s rs.knapping.grid.g_id
 scoreboard players operation #knapping.temp rs.knapping.grid.row = @s rs.knapping.grid.row
@@ -13,7 +13,7 @@ scoreboard players operation #knapping.temp rs.knapping.grid.col = @s rs.knappin
 
 execute as @e[type=minecraft:interaction,tag=grid_storage,sort=nearest] \
     if score @s rs.knapping.grid.g_id = #knapping.temp rs.knapping.grid.g_id \
-    run function randomstuff:knapping/grid/grid_cell/flip_bit with storage randomstuff:knapping.grid.temp.idx
+    run function randomstuff:knapping/grid/grid_cell/flip_bit with storage randomstuff:knapping.grid temp.idx
 
 execute as @e[type=minecraft:block_display,tag=grid_disp] \
     if score @s rs.knapping.grid.g_id = #knapping.temp rs.knapping.grid.g_id \
