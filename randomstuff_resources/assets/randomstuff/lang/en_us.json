@@ -4,5 +4,8 @@
     "randomstuff.items.stone_axe_head": "Stone Axe Head",
     "randomstuff.items.stone_knife_head": "Stone Knife Head",
     "randomstuff.items.stone_shovel_head": "Stone Shovel Head",
-    "randomstuff.items.flint_and_flint": "Flint and Flint"
+    "randomstuff.items.flint_and_flint": "Flint and Flint",
+    "randomstuff.items.tool_stick": "Tool stick",
+    "randomstuff.items.knappable_clay": "Knappable Clay",
+    "randomstuff.items.knappable_rock": "Knappable Rock"
 }

@@ -4,10 +4,10 @@
             "trigger": "minecraft:using_item",
             "conditions": {
                 "item": {
-                    "items": "#randomstuff:knappable",
+                    "items": "minecraft:stick",
                     "predicates": {
                         "minecraft:custom_data": {
-                            "knappable": true
+                            "id": "tool_stick"
                         }
                     }
                 }
@@ -15,6 +15,6 @@
         }
     },
     "rewards": {
-        "function": "randomstuff:knapping/interaction/on_rightclick"
+        "function": "randomstuff:items/tool_stick/use"
     }
 }

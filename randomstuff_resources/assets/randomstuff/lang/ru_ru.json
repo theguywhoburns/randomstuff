@@ -4,5 +4,8 @@
     "randomstuff.items.stone_axe_head": "Каменный наконечник топора",
     "randomstuff.items.stone_knife_head": "Каменный наконечник ножа",
     "randomstuff.items.stone_shovel_head": "Каменный наконечник лопаты",
-    "randomstuff.items.flint_and_flint": "Кремень и кремень"
+    "randomstuff.items.flint_and_flint": "Кремень и кремень",
+    "randomstuff.items.tool_stick": "Палка для инструмента",
+    "randomstuff.items.knappable_clay": "Легкая глина",
+    "randomstuff.items.knappable_rock": "Легкий камень"
 }

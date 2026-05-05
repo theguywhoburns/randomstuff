@@ -12,7 +12,9 @@ function randomstuff:items/registry/register {\
 function randomstuff:items/registry/register {\
     id:"tool_stick",\
     raw:"minecraft:stick",\
-    fields:[]\
+    fields:[\
+        {field:{consumable:{consume_seconds:1000000000}}},\
+    ]\
 }
 function randomstuff:items/registry/register {\
     id:"stone_knife_head",\
@@ -28,4 +30,22 @@ function randomstuff:items/registry/register {\
     id:"stone_shovel_head",\
     raw:"minecraft:prismarine_shard",\
     fields:[]\
+}
+function randomstuff:items/registry/register {\
+    id:"knappable_clay",\
+    raw:"minecraft:clay_ball",\
+    fields:[\
+        {field:{consumable:{consume_seconds:1000000000}}},\
+        {field:{item_model:"minecraft:clay_ball"}},\
+        {field:{custom_data:{knappable:true}}},\
+    ]\
+}
+function randomstuff:items/registry/register {\
+    id:"knappable_rock",\
+    raw:"minecraft:iron_nugget",\
+    fields:[\
+        {field:{consumable:{consume_seconds:1000000000}}},\
+        {field:{item_model:"minecraft:iron_nugget"}},\
+        {field:{custom_data:{knappable:true}}},\
+    ]\
 }
